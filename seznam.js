@@ -108,21 +108,21 @@ const filmy = [
 const seznamMovies = document.querySelector("#seznam-filmu")
 seznamMovies.textContent = ''
 
-filmy.forEach((prvek) => {
+filmy.forEach((mov) => {
 	seznamMovies.innerHTML += `
 	<div class="col">
 	   <div class="card">
 		  <img
-			 src="${prvek.plakat.url}"
-			 width="${prvek.plakat.sirka}"
-			 height="${prvek.plakat.vyska}"
+			 src="${mov.plakat.url}"
+			 width="${mov.plakat.sirka}"
+			 height="${mov.plakat.vyska}"
 			 class="card-img-top"
 			 alt="plakát"
 		  />
 		  <div class="card-body">
-			 <h5 class="card-title">"${prvek.nazev}"</h5>
-			 <p class="card-text">"${prvek.ochutnavka}"</p>
-			 <a href="film.html#${prvek.id}" class="btn btn-primary">Přehrát</a>
+			 <h5 class="card-title">"${mov.nazev}"</h5>
+			 <p class="card-text">"${mov.ochutnavka}"</p>
+			 <a href="film.html#${mov.id}" class="btn btn-primary">Přehrát</a>
 		  </div>
 	   </div>
 	</div>

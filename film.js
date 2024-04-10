@@ -104,19 +104,16 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
-const detailMovie = document.getElementById("#detail-filmu")
+const detailMovie = document.querySelector("#detail-filmu")
+const movieId = window.location.hash.slice(1)
+const movie = filmy.find((mov) => mov.id === movieId)
 
-filmy.forEach((mov) => {
-	const movieId = mov.location.hash.slice(1)
-	const detailMovie = mov.find(mov.id === movieId)
+const mname = detailMovie.querySelector(".card-title")
+mname.textContent = findMovie.nazev
 
-	const mname = detailMovie.querySelector(".card-title")
-	mname.textContent = findMovie.nazev
+const poster = detailMovie.querySelector(".img-fluid")
+poster.src = findMovie.plakat.url
 
-	const poster = detailMovie.querySelector(".img-fluid")
-	poster.src = findMovie.plakat.url
-
-	const text = detailMovie.querySelector(".card-text")
-	text.textContent = findMovie.popis
-})
+const text = detailMovie.querySelector(".card-text")
+text.textContent = findMovie.popis
 
