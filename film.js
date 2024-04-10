@@ -106,7 +106,7 @@ const filmy = [
 ]
 const detailMovie = document.querySelector("#detail-filmu")
 const movieId = window.location.hash.slice(1)
-const movie = filmy.find((mov) => mov.id === movieId)
+const findMovie = filmy.find((mov) => mov.id === movieId)
 
 const mname = detailMovie.querySelector(".card-title")
 mname.textContent = findMovie.nazev
