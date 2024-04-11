@@ -122,14 +122,16 @@ const addNote = document.querySelector("#node-form")
 addNote.addEventListener('submit', (event) => {
   event.preventDefault();
   const noteValue = document.querySelector('#message-input');
-  if (noteValue.value.lenght === 0){
-	noteValue.classList.add("is-invalid")
-  } else {
+  if (noteValue.value.lenght !== 0){
 	const noteValid = document.querySelector('.form-check-input');
 	if(noteValid.checked){
-		noteValue.innerHTML = `<p class="card-text">${noteValue.value}</p>`		
-	}else{
+		noteValue.innerHTML = `<p class="card-text">${noteValue.value}</p>`
+	}		
+	else{
 		noteValue.classList.add("is-invalid")
 	}
-  }
+  } else {
+	noteValue.classList.add("is-invalid")
+	}
+  
 });
