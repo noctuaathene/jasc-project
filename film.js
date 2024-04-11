@@ -125,8 +125,8 @@ addNote.addEventListener('click', (event) => {
   if (noteValue.value.lenght === 0){
 	noteValue.classList.add("is-invalid")
   } else {
-	const noteValid = document.querySelector('#form-check-label')
-	if(event.code !== "autocompleted"){
+	const noteValid = document.querySelector('.form-check-label');
+	if(noteValid.checked){
 		noteValue.classList.add("is-invalid")
 	}else{
 		noteValue.innerHTML = `<p class="card-text">${noteValue.value}</p>`
