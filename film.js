@@ -119,7 +119,7 @@ text.textContent = findMovie.popis
 
 const addNote = document.querySelector("#node-form")
 
-addNote.addEventListener('click', (event) => {
+addNote.addEventListener('submit', (event) => {
   event.preventDefault();
   const noteValue = document.querySelector('#message-input');
   if (noteValue.value.lenght === 0){
@@ -127,9 +127,9 @@ addNote.addEventListener('click', (event) => {
   } else {
 	const noteValid = document.querySelector('.form-check-input');
 	if(noteValid.checked){
-		noteValue.classList.add("is-invalid")
+		noteValue.innerHTML = `<p class="card-text">${noteValue.value}</p>`		
 	}else{
-		noteValue.innerHTML = `<p class="card-text">${noteValue.value}</p>`
+		noteValue.classList.add("is-invalid")
 	}
   }
 });
