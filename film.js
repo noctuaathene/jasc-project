@@ -117,3 +117,15 @@ poster.src = findMovie.plakat.url
 const text = detailMovie.querySelector(".card-text")
 text.textContent = findMovie.popis
 
+const addNote = document.querySelector("#node-form")
+
+addNote.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const noteValid = document.querySelector('#message-input');
+  if (noteValid.value === ''){
+	noteValid.classList.add("is-invalid")
+  } else {
+	noteValid.innerHTML = `<p class="card-text">${noteValid.value}</p>	`
+  }
+
+});
