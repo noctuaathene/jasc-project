@@ -119,13 +119,17 @@ text.textContent = findMovie.popis
 
 const addNote = document.querySelector("#node-form")
 
-addNote.addEventListener('submit', (event) => {
+addNote.addEventListener('click', (event) => {
   event.preventDefault();
-  const noteValid = document.querySelector('#message-input');
-  if (noteValid.value === ''){
-	noteValid.classList.add("is-invalid")
+  const noteValue = document.querySelector('#message-input');
+  if (noteValue.value.lenght === 0){
+	noteValue.classList.add("is-invalid")
   } else {
-	noteValid.innerHTML = `<p class="card-text">${noteValid.value}</p>	`
+	if( event.code !== "autocompleted"){
+		const noteValid = document.querySelector('#form-check-label')
+		noteValue.classList.add("is-invalid")
+	}else{
+		noteValue.innerHTML = `<p class="card-text">${noteValid.value}</p>`
+	}
   }
-
 });
