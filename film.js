@@ -125,7 +125,7 @@ addNote.addEventListener('click', (event) => {
   if (noteValue.value.lenght === 0){
 	noteValue.classList.add("is-invalid")
   } else {
-	const noteValid = document.querySelector('.form-check-label');
+	const noteValid = document.querySelector('.form-check-input');
 	if(noteValid.checked){
 		noteValue.classList.add("is-invalid")
 	}else{
